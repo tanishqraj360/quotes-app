@@ -32,13 +32,15 @@ public class MainActivity extends AppCompatActivity {
         quoteTextView = findViewById(R.id.quoteTextView);
         changeQuoteButton = findViewById(R.id.changeQuoteButton);
 
-        changeQuoteButton.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
-                showNextQuote();
-            }
-        });
-    };
+        changeQuoteButton.setOnClickListener(view -> showNextQuote());
+    }
 
     private void showNextQuote() {
+        if(currentQuoteIndex< quotes.length-1){
+            currentQuoteIndex++;
+        }else{
+            currentQuoteIndex=0;
+        }
+        quoteTextView.setText(quotes[currentQuoteIndex]);
     }
 };
