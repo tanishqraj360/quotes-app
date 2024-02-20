@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -11,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView quoteTextView;
     private Button changeQuoteButton;
-2
+
     private String[] quotes ={
             "The only way to do great work is to love what you do. - Steve Jobs",
             "Innovation distinguishes between a leader and a follower. - Steve Jobs",
@@ -31,11 +32,13 @@ public class MainActivity extends AppCompatActivity {
         quoteTextView = findViewById(R.id.quoteTextView);
         changeQuoteButton = findViewById(R.id.changeQuoteButton);
 
-        changeQuoteButton.setOnClickListener(new View.OnClickListener()){
-            @Override
-                    public void onClick(View view){
-                showNewxtQuote();
+        changeQuoteButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                showNextQuote();
             }
-        };
+        });
+    };
+
+    private void showNextQuote() {
     }
-}
+};
